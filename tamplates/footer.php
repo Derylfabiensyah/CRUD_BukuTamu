@@ -66,6 +66,14 @@
                 });
             }, 4000);
         });
+
+        $('#gantiPassword').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            var userId = button.data('id');
+            var modal = $(this);
+            modal.find('#id_user_password').val(userId);
+        });
+
     </script>
 </body>
 
