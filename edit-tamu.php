@@ -10,7 +10,7 @@ include_once('tamplates/header.php');
 
   <?php
   if(isset($_GET['id'])) {
-    $idu = $_GET['id'];
+    $id = $_GET['id'];
     $data = query("SELECT * FROM tabel_bukutamu WHERE id_tamu = '$id'")[0];
   }
   ?>
@@ -37,7 +37,7 @@ include_once('tamplates/header.php');
       <h6>Data Tamu</h6>
       <div class="card-body">
         <form action="" method="post">
-          <input type="hidden" name="id_tamu" id="id_tamu" value="<?= $id_tamu?>">
+          <input type="hidden" name="id_tamu" id="id_tamu" value="<?= $data['id_tamu'] ?>">
           <div class="form-group row">
             <label for="nama_tamu" class="col-sm-3 col-form-label">Nama Tamu</label>
             <div class="col-sm-8">
