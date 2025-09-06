@@ -73,7 +73,7 @@ if (isset($_POST['login'])) {
                         <div class="row">
                             <div class="col-lg-6 d-none d-lg-block bg-login-image">
                                 <div class="d-flex justify-content-center align-items-center h-100">
-                                    <img src="assets/login-page.png" alt="Login Image"
+                                    <img src="assets/img/login-page.png" alt="Login Image"
                                         class="img-fluid rounded-start" style="width: 90%; height: auto;">
                                 </div>
 
