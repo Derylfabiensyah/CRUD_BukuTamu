@@ -99,6 +99,7 @@ function hapus_user($id) {
 }
 
 function ganti_password($data) {
+    $koneksi = mysqli_connect("localhost", "root", "", "nama_database");
     global $koneksi;
 
     $id_user = $data['id_user'];
@@ -109,4 +110,5 @@ function ganti_password($data) {
 
     return mysqli_affected_rows($koneksi);
 }
+
 ?>
