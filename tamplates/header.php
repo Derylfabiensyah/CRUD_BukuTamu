@@ -1,4 +1,7 @@
+<?php
+session_start();
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -68,7 +71,16 @@
             </li>
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
-
+            <?php
+            if (isset($_SESSION['login'])):
+                ?>
+                <li class="nav-item">
+                <a href="logout.php" class="nav-link">
+                    <i class="fas fa-fw fa-power-off"></i>
+                    <span>Logout</span>
+                </a>
+                </li>
+                <?php endif;?>
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
