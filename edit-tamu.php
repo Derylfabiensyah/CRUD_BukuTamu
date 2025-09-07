@@ -1,4 +1,3 @@
-
 <?php
 require_once('function.php');
 include_once('tamplates/header.php');
@@ -10,8 +9,8 @@ include_once('tamplates/header.php');
 
   <?php
   if(isset($_GET['id'])) {
-    $id = $_GET['id'];
-    $data = query("SELECT * FROM tabel_bukutamu WHERE id_tamu = '$id'")[0];
+    $id_tamu = $_GET['id'];
+    $data = query("SELECT * FROM tabel_bukutamu WHERE id_tamu = '$id_tamu'")[0];
   }
   ?>
 
@@ -36,8 +35,9 @@ include_once('tamplates/header.php');
     <div class="card-header py-3">
       <h6>Data Tamu</h6>
       <div class="card-body">
-        <form action="" method="post">
-          <input type="hidden" name="id_tamu" id="id_tamu" value="<?= $data['id_tamu'] ?>">
+        <form action="" method="post" enctype="multipart/form-data">
+          <input type="hidden" name="id_tamu" id="id_tamu" value="<?= $id_tamu?>">
+          <input type="hidden" name="gambarLama" id="gambarLama" value="<?= $data['gambar']?>">
           <div class="form-group row">
             <label for="nama_tamu" class="col-sm-3 col-form-label">Nama Tamu</label>
             <div class="col-sm-8">
@@ -66,6 +66,14 @@ include_once('tamplates/header.php');
             <label for="kepentingan" class="col-sm-3 col-form-label">Kepentingan</label>
             <div class="col-sm-8">
               <input type="text" class="form-control" id="kepentingan" name="kepentingan" value="<?= $data['kepentingan']?>">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="gambar" class="col-sm-3 col-form-label">Gambar Foto</label>
+            <div class="col-sm-8">
+              <img src="assets/upload_gambar/<?= $data['gambar']?>" alt="" width="30%">
+              <input type="file" class="custom-file-input" id="gambar" name="gambar">
+              <label for="gambar" class="custom-file-label">Chosse file</label>
             </div>
           </div>
           <div class="form-group row">
